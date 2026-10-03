@@ -1,0 +1,2568 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NAIDUS Wedding Invitation - Sai & Sailu</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+
+            /* RED BACKGROUND */
+            background:
+                radial-gradient(circle at top, #ff7777, #c40000 55%, #680000);
+
+            color: #4b3028;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* =====================================
+           ANIMATED HEART BACKGROUND
+        ====================================== */
+
+        .heart-background {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(255, 220, 220, 0.35);
+            font-size: 25px;
+            animation: heartMove linear infinite;
+        }
+
+        @keyframes heartMove {
+
+            0% {
+                transform:
+                    translateY(110vh)
+                    rotate(0deg)
+                    scale(0.5);
+
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            100% {
+                transform:
+                    translateY(-15vh)
+                    rotate(360deg)
+                    scale(1.4);
+
+                opacity: 0;
+            }
+        }
+
+        /* =====================================
+           PAGES
+        ====================================== */
+
+        .page {
+            min-height: 100vh;
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 50px 15px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .page.active {
+            display: flex;
+
+            animation:
+                pageAnimation 0.8s ease;
+        }
+
+        @keyframes pageAnimation {
+
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.97);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* =====================================
+           MAIN INVITATION CARD
+        ====================================== */
+
+        .invitation-card {
+
+            width: 100%;
+            max-width: 950px;
+
+            padding: 55px 35px;
+
+            border-radius: 35px;
+
+            /* PALE SKIN */
+            background:
+                linear-gradient(
+                    135deg,
+                    #fffaf2,
+                    #f7eadb
+                );
+
+            box-shadow:
+                0 25px 80px
+                rgba(0, 0, 0, 0.35);
+
+            border:
+                4px solid
+                rgba(255, 255, 255, 0.5);
+
+            text-align: center;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .invitation-card::before {
+
+            content: "♥";
+
+            position: absolute;
+
+            font-size: 250px;
+
+            color: rgba(180, 0, 0, 0.04);
+
+            left: 50%;
+
+            top: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            z-index: 0;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* =====================================
+           TITLES
+        ====================================== */
+
+        .small-title {
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+
+            color: #a13a35;
+
+            font-size: 14px;
+
+            font-weight: 500;
+        }
+
+        .main-title {
+
+            font-family: "Great Vibes", cursive;
+
+            color: #a60000;
+
+            font-size:
+                clamp(60px, 10vw, 105px);
+
+            margin: 15px 0;
+        }
+
+        .names {
+
+            font-family: "Great Vibes", cursive;
+
+            font-size:
+                clamp(48px, 8vw, 85px);
+
+            color: #8d1717;
+
+            margin: 10px 0;
+        }
+
+        .and {
+
+            color: #d48b72;
+
+            padding: 0 10px;
+        }
+
+        .date {
+
+            font-size: 25px;
+
+            font-weight: 600;
+
+            color: #7e3830;
+        }
+
+        /* =====================================
+           BIG HEART
+        ====================================== */
+
+        .heart-main {
+
+            font-size: 110px;
+
+            color: #d00000;
+
+            display: inline-block;
+
+            animation:
+                heartBeat 1.3s infinite;
+
+            text-shadow:
+                0 10px 25px
+                rgba(160, 0, 0, 0.3);
+        }
+
+        @keyframes heartBeat {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            15% {
+                transform: scale(1.15);
+            }
+
+            30% {
+                transform: scale(1);
+            }
+
+            45% {
+                transform: scale(1.12);
+            }
+        }
+
+        /* =====================================
+           DIVIDER
+        ====================================== */
+
+        .divider {
+
+            width: 180px;
+
+            height: 2px;
+
+            background:
+                linear-gradient(
+                    to right,
+                    transparent,
+                    #b87865,
+                    transparent
+                );
+
+            margin: 25px auto;
+
+            position: relative;
+        }
+
+        .divider::after {
+
+            content: "♥";
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            background: #fff8ef;
+
+            padding: 0 12px;
+
+            color: #c40000;
+        }
+
+        /* =====================================
+           BUTTONS
+        ====================================== */
+
+        .open-btn,
+        .next-btn {
+
+            border: none;
+
+            border-radius: 50px;
+
+            padding:
+                14px 35px;
+
+            margin: 8px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d00000,
+                    #8b0000
+                );
+
+            color: white;
+
+            font-size: 16px;
+
+            box-shadow:
+                0 8px 25px
+                rgba(120, 0, 0, 0.3);
+
+            transition: 0.35s;
+        }
+
+        .open-btn:hover,
+        .next-btn:hover {
+
+            transform:
+                translateY(-5px)
+                scale(1.04);
+
+            box-shadow:
+                0 15px 30px
+                rgba(120, 0, 0, 0.4);
+
+            color: white;
+        }
+
+        .back-btn {
+
+            background:
+                #a9bd9e;
+
+            color: #263b26;
+        }
+
+        .back-btn:hover {
+
+            background:
+                #879f7b;
+
+            color: white;
+        }
+
+        /* =====================================
+           INFORMATION CARDS
+        ====================================== */
+
+        .info-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+            margin-top: 35px;
+        }
+
+        .info-card {
+
+            padding: 25px 15px;
+
+            border-radius: 22px;
+
+            /* PALE GREEN */
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eff7e9,
+                    #dfeedd
+                );
+
+            border:
+                1px solid
+                #c8d9bd;
+
+            transition: 0.35s;
+        }
+
+        .info-card:hover {
+
+            transform:
+                translateY(-10px);
+
+            box-shadow:
+                0 15px 30px
+                rgba(70, 100, 60, 0.18);
+        }
+
+        .info-icon {
+
+            font-size: 38px;
+
+            margin-bottom: 8px;
+        }
+
+        .info-card h4 {
+
+            color: #58754e;
+
+            font-weight: 600;
+        }
+
+        /* =====================================
+           FAMILY SECTION
+        ====================================== */
+
+        .family-box {
+
+            background:
+                #f5eee5;
+
+            border-left:
+                5px solid
+                #a60000;
+
+            border-radius:
+                20px;
+
+            padding:
+                30px;
+
+            margin-top:
+                30px;
+        }
+
+        .family-box h4 {
+
+            color:
+                #9b3029;
+        }
+
+        /* =====================================
+           COUNTDOWN
+        ====================================== */
+
+        .countdown {
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 15px;
+
+            margin:
+                30px 0;
+        }
+
+        .time-box {
+
+            min-width:
+                90px;
+
+            padding:
+                16px;
+
+            border-radius:
+                18px;
+
+            background:
+                #e5f0df;
+
+            border:
+                1px solid
+                #c4d5ba;
+        }
+
+        .time-box span {
+
+            display: block;
+
+            font-size:
+                30px;
+
+            font-weight:
+                600;
+
+            color:
+                #607e55;
+        }
+
+        .time-box small {
+
+            color:
+                #74846c;
+        }
+
+        /* =====================================
+           PAGE NUMBER
+        ====================================== */
+
+        .page-number {
+
+            margin-top:
+                25px;
+
+            font-size:
+                13px;
+
+            color:
+                #98786b;
+        }
+
+        /* =====================================
+           MOBILE
+        ====================================== */
+
+        @media(max-width: 700px) {
+
+            .invitation-card {
+
+                padding:
+                    40px 20px;
+
+                border-radius:
+                    25px;
+            }
+
+            .info-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+            .names {
+
+                font-size:
+                    55px;
+            }
+
+            .main-title {
+
+                font-size:
+                    65px;
+            }
+
+            .heart-main {
+
+                font-size:
+                    85px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- =========================================
+     FLOATING HEART BACKGROUND
+========================================== -->
+
+<div class="heart-background" id="heartBackground"></div>
+
+
+<!-- =========================================
+     PAGE 1
+     WELCOME
+========================================== -->
+
+<section
+    id="page1"
+    class="page active">
+
+    <div class="invitation-card">
+
+        <div class="content">
+
+            <div class="small-title">
+                ♥ A Heartfelt Welcome ♥
+            </div>
+
+            <h1 class="main-title">
+                NAIDUS
+            </h1>
+
+            <p>
+                Wedding Invitation
+            </p>
+
+            <div class="heart-main">
+                ♥
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="names">
+
+                Sai
+
+                <span class="and">
+                    ♥
+                </span>
+
+                Sailu
+
+            </div>
+
+            <p class="mt-3">
+                Two hearts,
+                one beautiful journey,
+                one lifetime of love.
+            </p>
+
+            <button
+                class="open-btn"
+                onclick="showPage(2)">
+
+                💌 Open Invitation
+
+            </button>
+
+            <div class="page-number">
+                Page 1 of 4
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     PAGE 2
+     WEDDING DETAILS
+========================================== -->
+
+<section
+    id="page2"
+    class="page">
+
+    <div class="invitation-card">
+
+        <div class="content">
+
+            <div class="small-title">
+                You Are Invited
+            </div>
+
+            <h2
+                class="main-title"
+                style="font-size:70px;">
+
+                The Wedding
+
+            </h2>
+
+            <div class="divider"></div>
+
+            <p>
+
+                With great happiness and love,
+                we invite you to celebrate the
+                wedding ceremony of
+
+            </p>
+
+            <div class="names">
+
+                Sai
+                <span class="and">♥</span>
+                Sailu
+
+            </div>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        📅
+                    </div>
+
+                    <h4>
+                        Date
+                    </h4>
+
+                    <p>
+                        27 March 2027
+                    </p>
+
+                </div>
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        ⏰
+                    </div>
+
+                    <h4>
+                        Time
+                    </h4>
+
+                    <p>
+                        8:00 AM
+                    </p>
+
+                </div>
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        📍
+                    </div>
+
+                    <h4>
+                        Place
+                    </h4>
+
+                    <p>
+                        Eluru
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="family-box">
+
+                <h4>
+                    ♥ Heartfelt Welcome ♥
+                </h4>
+
+                <p>
+                    We warmly welcome our relatives,
+                    friends and well-wishers to join
+                    this beautiful celebration.
+                </p>
+
+                <p>
+                    Your presence and blessings will
+                    make this special day even more
+                    memorable.
+                </p>
+
+            </div>
+
+            <div class="mt-4">
+
+                <button
+                    class="next-btn back-btn"
+                    onclick="showPage(1)">
+
+                    ← Back
+
+                </button>
+
+                <button
+                    class="next-btn"
+                    onclick="showPage(3)">
+
+                    Next Page →
+
+                </button>
+
+            </div>
+
+            <div class="page-number">
+                Page 2 of 4
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     PAGE 3
+     DETAILS / FAMILY
+========================================== -->
+
+<section
+    id="page3"
+    class="page">
+
+    <div class="invitation-card">
+
+        <div class="content">
+
+            <div class="small-title">
+                A New Beginning
+            </div>
+
+            <h2
+                class="main-title"
+                style="font-size:70px;">
+
+                Together Forever
+
+            </h2>
+
+            <div class="divider"></div>
+
+            <p>
+                Marriage is the beginning of a new
+                chapter filled with love, trust,
+                friendship and togetherness.
+            </p>
+
+            <p>
+                Sai and Sailu are beginning their
+                beautiful journey together, surrounded
+                by the people who love and care for them.
+            </p>
+
+            <div class="family-box">
+
+                <h4>
+                    ♥ Our Family Welcomes You ♥
+                </h4>
+
+                <p>
+                    We invite you to share our happiness
+                    and bless the couple as they begin
+                    their journey together.
+                </p>
+
+                <p>
+                    Come with your smiles,
+                    blessings and love.
+                </p>
+
+            </div>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        ❤️
+                    </div>
+
+                    <h4>
+                        Love
+                    </h4>
+
+                    <p>
+                        A bond that grows stronger
+                        every day.
+                    </p>
+
+                </div>
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        🤝
+                    </div>
+
+                    <h4>
+                        Together
+                    </h4>
+
+                    <p>
+                        Two people walking one
+                        beautiful journey.
+                    </p>
+
+                </div>
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        🙏
+                    </div>
+
+                    <h4>
+                        Blessings
+                    </h4>
+
+                    <p>
+                        Your blessings are precious
+                        to us.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="mt-4">
+
+                <button
+                    class="next-btn back-btn"
+                    onclick="showPage(2)">
+
+                    ← Back
+
+                </button>
+
+                <button
+                    class="next-btn"
+                    onclick="showPage(4)">
+
+                    Final Page →
+
+                </button>
+
+            </div>
+
+            <div class="page-number">
+                Page 3 of 4
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     PAGE 4
+     FINAL CARD
+========================================== -->
+
+<section
+    id="page4"
+    class="page">
+
+    <div class="invitation-card">
+
+        <div class="content">
+
+            <div class="small-title">
+                Save The Date
+            </div>
+
+            <div class="heart-main">
+                ♥
+            </div>
+
+            <h1 class="main-title">
+                Sai ♥ Sailu
+            </h1>
+
+            <div class="divider"></div>
+
+            <div class="date">
+                27 • 03 • 2027
+            </div>
+
+            <p class="mt-3">
+                ⏰ 8:00 AM
+            </p>
+
+            <p>
+                📍 Eluru
+            </p>
+
+            <!-- COUNTDOWN -->
+
+            <div class="countdown">
+
+                <div class="time-box">
+
+                    <span id="days">
+                        0
+                    </span>
+
+                    <small>
+                        Days
+                    </small>
+
+                </div>
+
+                <div class="time-box">
+
+                    <span id="hours">
+                        0
+                    </span>
+
+                    <small>
+                        Hours
+                    </small>
+
+                </div>
+
+                <div class="time-box">
+
+                    <span id="minutes">
+                        0
+                    </span>
+
+                    <small>
+                        Minutes
+                    </small>
+
+                </div>
+
+                <div class="time-box">
+
+                    <span id="seconds">
+                        0
+                    </span>
+
+                    <small>
+                        Seconds
+                    </small>
+
+                </div>
+
+            </div>
+
+            <div class="family-box">
+
+                <h4>
+                    ♥ Heartfelt Welcome ♥
+                </h4>
+
+                <p>
+                    Your presence is the greatest gift.
+                </p>
+
+                <p>
+                    Please join us and shower
+                    Sai & Sailu with your love,
+                    happiness and blessings.
+                </p>
+
+            </div>
+
+            <div class="heart-main">
+                ♥
+            </div>
+
+            <p>
+                Thank you for being a part
+                of our special day.
+            </p>
+
+            <button
+                class="next-btn back-btn"
+                onclick="showPage(3)">
+
+                ← Back
+
+            </button>
+
+            <button
+                class="next-btn"
+                onclick="showPage(1)">
+
+                ↻ Start Again
+
+            </button>
+
+            <div class="page-number">
+                Page 4 of 4
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================== -->
+
+<script>
+
+    /* =================================
+       PAGE NAVIGATION
+    ================================== */
+
+    function showPage(pageNumber) {
+
+        document
+            .querySelectorAll(".page")
+            .forEach(page => {
+
+                page.classList.remove("active");
+
+            });
+
+        document
+            .getElementById("page" + pageNumber)
+            .classList.add("active");
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+
+
+    /* =================================
+       FLOATING HEARTS
+    ================================== */
+
+    const heartBackground =
+        document.getElementById(
+            "heartBackground"
+        );
+
+    function createHeart() {
+
+        const heart =
+            document.createElement("div");
+
+        heart.className = "heart";
+
+        heart.innerHTML = "♥";
+
+        heart.style.left =
+            Math.random() * 100 + "%";
+
+        heart.style.fontSize =
+            (12 + Math.random() * 35) + "px";
+
+        heart.style.animationDuration =
+            (5 + Math.random() * 9) + "s";
+
+        heart.style.animationDelay =
+            Math.random() * 4 + "s";
+
+        heartBackground.appendChild(heart);
+
+        setTimeout(() => {
+
+            heart.remove();
+
+        }, 16000);
+
+    }
+
+
+    setInterval(createHeart, 450);
+
+
+    /* Create initial hearts */
+
+    for(let i = 0; i < 25; i++) {
+
+        createHeart();
+
+    }
+
+
+    /* =================================
+       WEDDING COUNTDOWN
+    ================================== */
+
+    const weddingDate =
+        new Date(
+            "March 27, 2027 08:00:00"
+        ).getTime();
+
+
+    function updateCountdown() {
+
+        const now =
+            new Date().getTime();
+
+        const difference =
+            weddingDate - now;
+
+
+        if(difference <= 0) {
+
+            document.getElementById("days")
+                .innerText = "0";
+
+            document.getElementById("hours")
+                .innerText = "0";
+
+            document.getElementById("minutes")
+                .innerText = "0";
+
+            document.getElementById("seconds")
+                .innerText = "0";
+
+            return;
+        }
+
+
+        const days =
+            Math.floor(
+                difference /
+                (1000 * 60 * 60 * 24)
+            );
+
+
+        const hours =
+            Math.floor(
+                (difference %
+                (1000 * 60 * 60 * 24)) /
+                (1000 * 60 * 60)
+            );
+
+
+        const minutes =
+            Math.floor(
+                (difference %
+                (1000 * 60 * 60)) /
+                (1000 * 60)
+            );
+
+
+        const seconds =
+            Math.floor(
+                (difference %
+                (1000 * 60)) /
+                1000
+            );
+
+
+        document.getElementById("days")
+            .innerText = days;
+
+        document.getElementById("hours")
+            .innerText = hours;
+
+        document.getElementById("minutes")
+            .innerText = minutes;
+
+        document.getElementById("seconds")
+            .innerText = seconds;
+
+    }
+
+
+    updateCountdown();
+
+    setInterval(
+        updateCountdown,
+        1000
+    );
+
+</script>
+
+</body>
+</html>
+```
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NAIDUS Wedding Invitation - Sai & Sailu</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+
+            /* RED BACKGROUND */
+            background:
+                radial-gradient(circle at top, #ff7777, #c40000 55%, #680000);
+
+            color: #4b3028;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* =====================================
+           ANIMATED HEART BACKGROUND
+        ====================================== */
+
+        .heart-background {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(255, 220, 220, 0.35);
+            font-size: 25px;
+            animation: heartMove linear infinite;
+        }
+
+        @keyframes heartMove {
+
+            0% {
+                transform:
+                    translateY(110vh)
+                    rotate(0deg)
+                    scale(0.5);
+
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            100% {
+                transform:
+                    translateY(-15vh)
+                    rotate(360deg)
+                    scale(1.4);
+
+                opacity: 0;
+            }
+        }
+
+        /* =====================================
+           PAGES
+        ====================================== */
+
+        .page {
+            min-height: 100vh;
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 50px 15px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .page.active {
+            display: flex;
+
+            animation:
+                pageAnimation 0.8s ease;
+        }
+
+        @keyframes pageAnimation {
+
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.97);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* =====================================
+           MAIN INVITATION CARD
+        ====================================== */
+
+        .invitation-card {
+
+            width: 100%;
+            max-width: 950px;
+
+            padding: 55px 35px;
+
+            border-radius: 35px;
+
+            /* PALE SKIN */
+            background:
+                linear-gradient(
+                    135deg,
+                    #fffaf2,
+                    #f7eadb
+                );
+
+            box-shadow:
+                0 25px 80px
+                rgba(0, 0, 0, 0.35);
+
+            border:
+                4px solid
+                rgba(255, 255, 255, 0.5);
+
+            text-align: center;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .invitation-card::before {
+
+            content: "♥";
+
+            position: absolute;
+
+            font-size: 250px;
+
+            color: rgba(180, 0, 0, 0.04);
+
+            left: 50%;
+
+            top: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            z-index: 0;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* =====================================
+           TITLES
+        ====================================== */
+
+        .small-title {
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+
+            color: #a13a35;
+
+            font-size: 14px;
+
+            font-weight: 500;
+        }
+
+        .main-title {
+
+            font-family: "Great Vibes", cursive;
+
+            color: #a60000;
+
+            font-size:
+                clamp(60px, 10vw, 105px);
+
+            margin: 15px 0;
+        }
+
+        .names {
+
+            font-family: "Great Vibes", cursive;
+
+            font-size:
+                clamp(48px, 8vw, 85px);
+
+            color: #8d1717;
+
+            margin: 10px 0;
+        }
+
+        .and {
+
+            color: #d48b72;
+
+            padding: 0 10px;
+        }
+
+        .date {
+
+            font-size: 25px;
+
+            font-weight: 600;
+
+            color: #7e3830;
+        }
+
+        /* =====================================
+           BIG HEART
+        ====================================== */
+
+        .heart-main {
+
+            font-size: 110px;
+
+            color: #d00000;
+
+            display: inline-block;
+
+            animation:
+                heartBeat 1.3s infinite;
+
+            text-shadow:
+                0 10px 25px
+                rgba(160, 0, 0, 0.3);
+        }
+
+        @keyframes heartBeat {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            15% {
+                transform: scale(1.15);
+            }
+
+            30% {
+                transform: scale(1);
+            }
+
+            45% {
+                transform: scale(1.12);
+            }
+        }
+
+        /* =====================================
+           DIVIDER
+        ====================================== */
+
+        .divider {
+
+            width: 180px;
+
+            height: 2px;
+
+            background:
+                linear-gradient(
+                    to right,
+                    transparent,
+                    #b87865,
+                    transparent
+                );
+
+            margin: 25px auto;
+
+            position: relative;
+        }
+
+        .divider::after {
+
+            content: "♥";
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            background: #fff8ef;
+
+            padding: 0 12px;
+
+            color: #c40000;
+        }
+
+        /* =====================================
+           BUTTONS
+        ====================================== */
+
+        .open-btn,
+        .next-btn {
+
+            border: none;
+
+            border-radius: 50px;
+
+            padding:
+                14px 35px;
+
+            margin: 8px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d00000,
+                    #8b0000
+                );
+
+            color: white;
+
+            font-size: 16px;
+
+            box-shadow:
+                0 8px 25px
+                rgba(120, 0, 0, 0.3);
+
+            transition: 0.35s;
+        }
+
+        .open-btn:hover,
+        .next-btn:hover {
+
+            transform:
+                translateY(-5px)
+                scale(1.04);
+
+            box-shadow:
+                0 15px 30px
+                rgba(120, 0, 0, 0.4);
+
+            color: white;
+        }
+
+        .back-btn {
+
+            background:
+                #a9bd9e;
+
+            color: #263b26;
+        }
+
+        .back-btn:hover {
+
+            background:
+                #879f7b;
+
+            color: white;
+        }
+
+        /* =====================================
+           INFORMATION CARDS
+        ====================================== */
+
+        .info-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+            margin-top: 35px;
+        }
+
+        .info-card {
+
+            padding: 25px 15px;
+
+            border-radius: 22px;
+
+            /* PALE GREEN */
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eff7e9,
+                    #dfeedd
+                );
+
+            border:
+                1px solid
+                #c8d9bd;
+
+            transition: 0.35s;
+        }
+
+        .info-card:hover {
+
+            transform:
+                translateY(-10px);
+
+            box-shadow:
+                0 15px 30px
+                rgba(70, 100, 60, 0.18);
+        }
+
+        .info-icon {
+
+            font-size: 38px;
+
+            margin-bottom: 8px;
+        }
+
+        .info-card h4 {
+
+            color: #58754e;
+
+            font-weight: 600;
+        }
+
+        /* =====================================
+           FAMILY SECTION
+        ====================================== */
+
+        .family-box {
+
+            background:
+                #f5eee5;
+
+            border-left:
+                5px solid
+                #a60000;
+
+            border-radius:
+                20px;
+
+            padding:
+                30px;
+
+            margin-top:
+                30px;
+        }
+
+        .family-box h4 {
+
+            color:
+                #9b3029;
+        }
+
+        /* =====================================
+           COUNTDOWN
+        ====================================== */
+
+        .countdown {
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 15px;
+
+            margin:
+                30px 0;
+        }
+
+        .time-box {
+
+            min-width:
+                90px;
+
+            padding:
+                16px;
+
+            border-radius:
+                18px;
+
+            background:
+                #e5f0df;
+
+            border:
+                1px solid
+                #c4d5ba;
+        }
+
+        .time-box span {
+
+            display: block;
+
+            font-size:
+                30px;
+
+            font-weight:
+                600;
+
+            color:
+                #607e55;
+        }
+
+        .time-box small {
+
+            color:
+                #74846c;
+        }
+
+        /* =====================================
+           PAGE NUMBER
+        ====================================== */
+
+        .page-number {
+
+            margin-top:
+                25px;
+
+            font-size:
+                13px;
+
+            color:
+                #98786b;
+        }
+
+        /* =====================================
+           MOBILE
+        ====================================== */
+
+        @media(max-width: 700px) {
+
+            .invitation-card {
+
+                padding:
+                    40px 20px;
+
+                border-radius:
+                    25px;
+            }
+
+            .info-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+            .names {
+
+                font-size:
+                    55px;
+            }
+
+            .main-title {
+
+                font-size:
+                    65px;
+            }
+
+            .heart-main {
+
+                font-size:
+                    85px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- =========================================
+     FLOATING HEART BACKGROUND
+========================================== -->
+
+<div class="heart-background" id="heartBackground"></div>
+
+
+<!-- =========================================
+     PAGE 1
+     WELCOME
+========================================== -->
+
+<section
+    id="page1"
+    class="page active">
+
+    <div class="invitation-card">
+
+        <div class="content">
+
+            <div class="small-title">
+                ♥ A Heartfelt Welcome ♥
+            </div>
+
+            <h1 class="main-title">
+                NAIDUS
+            </h1>
+
+            <p>
+                Wedding Invitation
+            </p>
+
+            <div class="heart-main">
+                ♥
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="names">
+
+                Sai
+
+                <span class="and">
+                    ♥
+                </span>
+
+                Sailu
+
+            </div>
+
+            <p class="mt-3">
+                Two hearts,
+                one beautiful journey,
+                one lifetime of love.
+            </p>
+
+            <button
+                class="open-btn"
+                onclick="showPage(2)">
+
+                💌 Open Invitation
+
+            </button>
+
+            <div class="page-number">
+                Page 1 of 4
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     PAGE 2
+     WEDDING DETAILS
+========================================== -->
+
+<section
+    id="page2"
+    class="page">
+
+    <div class="invitation-card">
+
+        <div class="content">
+
+            <div class="small-title">
+                You Are Invited
+            </div>
+
+            <h2
+                class="main-title"
+                style="font-size:70px;">
+
+                The Wedding
+
+            </h2>
+
+            <div class="divider"></div>
+
+            <p>
+
+                With great happiness and love,
+                we invite you to celebrate the
+                wedding ceremony of
+
+            </p>
+
+            <div class="names">
+
+                Sai
+                <span class="and">♥</span>
+                Sailu
+
+            </div>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        📅
+                    </div>
+
+                    <h4>
+                        Date
+                    </h4>
+
+                    <p>
+                        27 March 2027
+                    </p>
+
+                </div>
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        ⏰
+                    </div>
+
+                    <h4>
+                        Time
+                    </h4>
+
+                    <p>
+                        8:00 AM
+                    </p>
+
+                </div>
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        📍
+                    </div>
+
+                    <h4>
+                        Place
+                    </h4>
+
+                    <p>
+                        Eluru
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="family-box">
+
+                <h4>
+                    ♥ Heartfelt Welcome ♥
+                </h4>
+
+                <p>
+                    We warmly welcome our relatives,
+                    friends and well-wishers to join
+                    this beautiful celebration.
+                </p>
+
+                <p>
+                    Your presence and blessings will
+                    make this special day even more
+                    memorable.
+                </p>
+
+            </div>
+
+            <div class="mt-4">
+
+                <button
+                    class="next-btn back-btn"
+                    onclick="showPage(1)">
+
+                    ← Back
+
+                </button>
+
+                <button
+                    class="next-btn"
+                    onclick="showPage(3)">
+
+                    Next Page →
+
+                </button>
+
+            </div>
+
+            <div class="page-number">
+                Page 2 of 4
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     PAGE 3
+     DETAILS / FAMILY
+========================================== -->
+
+<section
+    id="page3"
+    class="page">
+
+    <div class="invitation-card">
+
+        <div class="content">
+
+            <div class="small-title">
+                A New Beginning
+            </div>
+
+            <h2
+                class="main-title"
+                style="font-size:70px;">
+
+                Together Forever
+
+            </h2>
+
+            <div class="divider"></div>
+
+            <p>
+                Marriage is the beginning of a new
+                chapter filled with love, trust,
+                friendship and togetherness.
+            </p>
+
+            <p>
+                Sai and Sailu are beginning their
+                beautiful journey together, surrounded
+                by the people who love and care for them.
+            </p>
+
+            <div class="family-box">
+
+                <h4>
+                    ♥ Our Family Welcomes You ♥
+                </h4>
+
+                <p>
+                    We invite you to share our happiness
+                    and bless the couple as they begin
+                    their journey together.
+                </p>
+
+                <p>
+                    Come with your smiles,
+                    blessings and love.
+                </p>
+
+            </div>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        ❤️
+                    </div>
+
+                    <h4>
+                        Love
+                    </h4>
+
+                    <p>
+                        A bond that grows stronger
+                        every day.
+                    </p>
+
+                </div>
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        🤝
+                    </div>
+
+                    <h4>
+                        Together
+                    </h4>
+
+                    <p>
+                        Two people walking one
+                        beautiful journey.
+                    </p>
+
+                </div>
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+                        🙏
+                    </div>
+
+                    <h4>
+                        Blessings
+                    </h4>
+
+                    <p>
+                        Your blessings are precious
+                        to us.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="mt-4">
+
+                <button
+                    class="next-btn back-btn"
+                    onclick="showPage(2)">
+
+                    ← Back
+
+                </button>
+
+                <button
+                    class="next-btn"
+                    onclick="showPage(4)">
+
+                    Final Page →
+
+                </button>
+
+            </div>
+
+            <div class="page-number">
+                Page 3 of 4
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     PAGE 4
+     FINAL CARD
+========================================== -->
+
+<section
+    id="page4"
+    class="page">
+
+    <div class="invitation-card">
+
+        <div class="content">
+
+            <div class="small-title">
+                Save The Date
+            </div>
+
+            <div class="heart-main">
+                ♥
+            </div>
+
+            <h1 class="main-title">
+                Sai ♥ Sailu
+            </h1>
+
+            <div class="divider"></div>
+
+            <div class="date">
+                27 • 03 • 2027
+            </div>
+
+            <p class="mt-3">
+                ⏰ 8:00 AM
+            </p>
+
+            <p>
+                📍 Eluru
+            </p>
+
+            <!-- COUNTDOWN -->
+
+            <div class="countdown">
+
+                <div class="time-box">
+
+                    <span id="days">
+                        0
+                    </span>
+
+                    <small>
+                        Days
+                    </small>
+
+                </div>
+
+                <div class="time-box">
+
+                    <span id="hours">
+                        0
+                    </span>
+
+                    <small>
+                        Hours
+                    </small>
+
+                </div>
+
+                <div class="time-box">
+
+                    <span id="minutes">
+                        0
+                    </span>
+
+                    <small>
+                        Minutes
+                    </small>
+
+                </div>
+
+                <div class="time-box">
+
+                    <span id="seconds">
+                        0
+                    </span>
+
+                    <small>
+                        Seconds
+                    </small>
+
+                </div>
+
+            </div>
+
+            <div class="family-box">
+
+                <h4>
+                    ♥ Heartfelt Welcome ♥
+                </h4>
+
+                <p>
+                    Your presence is the greatest gift.
+                </p>
+
+                <p>
+                    Please join us and shower
+                    Sai & Sailu with your love,
+                    happiness and blessings.
+                </p>
+
+            </div>
+
+            <div class="heart-main">
+                ♥
+            </div>
+
+            <p>
+                Thank you for being a part
+                of our special day.
+            </p>
+
+            <button
+                class="next-btn back-btn"
+                onclick="showPage(3)">
+
+                ← Back
+
+            </button>
+
+            <button
+                class="next-btn"
+                onclick="showPage(1)">
+
+                ↻ Start Again
+
+            </button>
+
+            <div class="page-number">
+                Page 4 of 4
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================== -->
+
+<script>
+
+    /* =================================
+       PAGE NAVIGATION
+    ================================== */
+
+    function showPage(pageNumber) {
+
+        document
+            .querySelectorAll(".page")
+            .forEach(page => {
+
+                page.classList.remove("active");
+
+            });
+
+        document
+            .getElementById("page" + pageNumber)
+            .classList.add("active");
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+
+
+    /* =================================
+       FLOATING HEARTS
+    ================================== */
+
+    const heartBackground =
+        document.getElementById(
+            "heartBackground"
+        );
+
+    function createHeart() {
+
+        const heart =
+            document.createElement("div");
+
+        heart.className = "heart";
+
+        heart.innerHTML = "♥";
+
+        heart.style.left =
+            Math.random() * 100 + "%";
+
+        heart.style.fontSize =
+            (12 + Math.random() * 35) + "px";
+
+        heart.style.animationDuration =
+            (5 + Math.random() * 9) + "s";
+
+        heart.style.animationDelay =
+            Math.random() * 4 + "s";
+
+        heartBackground.appendChild(heart);
+
+        setTimeout(() => {
+
+            heart.remove();
+
+        }, 16000);
+
+    }
+
+
+    setInterval(createHeart, 450);
+
+
+    /* Create initial hearts */
+
+    for(let i = 0; i < 25; i++) {
+
+        createHeart();
+
+    }
+
+
+    /* =================================
+       WEDDING COUNTDOWN
+    ================================== */
+
+    const weddingDate =
+        new Date(
+            "March 27, 2027 08:00:00"
+        ).getTime();
+
+
+    function updateCountdown() {
+
+        const now =
+            new Date().getTime();
+
+        const difference =
+            weddingDate - now;
+
+
+        if(difference <= 0) {
+
+            document.getElementById("days")
+                .innerText = "0";
+
+            document.getElementById("hours")
+                .innerText = "0";
+
+            document.getElementById("minutes")
+                .innerText = "0";
+
+            document.getElementById("seconds")
+                .innerText = "0";
+
+            return;
+        }
+
+
+        const days =
+            Math.floor(
+                difference /
+                (1000 * 60 * 60 * 24)
+            );
+
+
+        const hours =
+            Math.floor(
+                (difference %
+                (1000 * 60 * 60 * 24)) /
+                (1000 * 60 * 60)
+            );
+
+
+        const minutes =
+            Math.floor(
+                (difference %
+                (1000 * 60 * 60)) /
+                (1000 * 60)
+            );
+
+
+        const seconds =
+            Math.floor(
+                (difference %
+                (1000 * 60)) /
+                1000
+            );
+
+
+        document.getElementById("days")
+            .innerText = days;
+
+        document.getElementById("hours")
+            .innerText = hours;
+
+        document.getElementById("minutes")
+            .innerText = minutes;
+
+        document.getElementById("seconds")
+            .innerText = seconds;
+
+    }
+
+
+    updateCountdown();
+
+    setInterval(
+        updateCountdown,
+        1000
+    );
+
+</script>
+
+</body>
+</html>
+```
